@@ -1,0 +1,50 @@
+% This is the mandatory, pedel-approved title page.
+% Text CANNOT be changed!
+% Thanks to https://github.com/mathren/API_thesis_template/blob/master/content/titlepage.tex for a simple LATEX template for these pages
+
+%---------------------------------------------------------------------------
+%	COVER PAGE
+%---------------------------------------------------------------------------
+
+% \thispagestyle{empty} % No page numbering here!
+
+\begin{minipage}[c][220mm][c]{124mm} %% Full center
+  % \begin{minipage}[c][190mm][c]{124mm}  %% 6mm offset from center to right
+    % For the print edition I choose to offset the page to compensate for the
+    % binding back. This gives the illusion that the title page is centered.
+    % For the digital edition I use the true center.
+  \makeatletter
+  \begin{center}
+      \vspace{1\baselineskip}
+      \begin{flushleft}
+        \includegraphics[width=0.4\linewidth]{sections/preface/logos/rugr_logoen_zwart_cmyk-eps-converted-to.pdf}
+      \end{flushleft}
+      \vspace{2\baselineskip}
+      { \huge Title}\\
+      \vspace{2\baselineskip}
+      \textbf{\normalsize PhD thesis}\\[1.2cm]
+      \vspace{2\baselineskip}
+      \linespread{1.2}
+      { \normalsize \textrm{
+          to obtain the degree of PhD at the \\
+          University of Groningen on \\
+          the authority of the \\
+          Rector Magnificus Prof. J.M.A. Scherpen \\
+          and in accordance with \\
+          the decision by the College of Deans. \\
+          \vspace{1\baselineskip}
+          This thesis will be defended in public on \\
+          Tuesday 17 February 2026 at 14:30 hours \\
+          \vspace{3\baselineskip}
+          by \\
+          \vspace{3\baselineskip}
+          \textbf{YOUR NAME} \\
+          \vspace{1\baselineskip}
+          born on 01 01 1099 in \\
+          Somewhere in Tatooine
+      } }
+
+  \end{center}
+  \makeatother
+
+\end{minipage}

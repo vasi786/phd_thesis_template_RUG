@@ -1,0 +1,123 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\cleardoubleevenemptypage
+%\includepdf[width=165mm]{sections/chapter5/images/pdfs/methods_figure1.pdf}
+\chapter{Chapter5}
+\footnotetext[\value{footnote}]{\noindent  This chapter is based on: V. Adupa, J. D. Polet, M. Dekker, P. R. Onck. \enquote{\textit{Understanding the role of DNAJB6b in Huntington's disease through coarse-grained molecular dynamics}}. In preparation.}
+\addtocounter{footnote}{-1}  % Don't increment the counter
+\markboth{}{} % Clear header marks for the first page
+\thispagestyle{noheadrule}
+\label{ch:chapter5}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pgfmathsetmacro\chapclr{\colourarray[5]}
+\hypersetup{
+  citecolor  = \chapclr,
+  linkcolor  = \chapclr,
+  urlcolor   = \chapclr,
+}
+
+\epigraph{
+  Talk is cheap. Show me the code.
+}{
+  Linus Torvalds
+}
+
+\begin{center}
+    \begin{minipage}{\abstractwidth\textwidth}
+      \begin{small}
+        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+        The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
+        Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.
+        Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+      \end{small}
+    \end{minipage}
+    \vspace{0.5cm}
+\end{center}
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Introduction}
+
+  Contrary to popular belief, Lorem Ipsum is not simply random text.
+  It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
+  Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.
+  Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC.
+  This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+
+  It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+  The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
+  Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.
+  Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+
+  \clearpage
+  \newpage
+
+
+  \begin{sidewaystable}
+    \renewcommand*{\arraystretch}{1.3}
+    \centering
+    \begin{threeparttable}
+      \caption{ \textbf{Conformational sampling of DNAJB6b. } The final composition of states of DNAJB6b in the simulations starting with mixed, all-closed, all-open, and all-extended DNAJB6b.
+      The percentages of states are given for the final \SI{50}{\nano\second} of the simulations.}
+    \label{tab:DNAJB6b_final_states}
+    \begin{tabular}{l l w{c}{25pt} w{c}{25pt} w{c}{25pt} w{c}{25pt} w{c}{25pt} w{c}{25pt} w{c}{25pt} w{c}{25pt} w{c}{25pt}}
+    \hline\hline
+       &  & \multicolumn{3}{c}{Closed state [\%]} & \multicolumn{3}{c}{Open state [\%]} & \multicolumn{3}{c}{Extended state [\%]}\\\cmidrule(lr){3-5}\cmidrule(lr){6-8}\cmidrule(lr){9-11}
+      DNAJB6b\tnote{$\dagger$} & \enspace Q48\tnote{$\dagger$} & R1 & R2 & R3 & R1 & R2 & R3 & R1 & R2 & R3\\
+     \hline
+     \multirow{3}{*}{Mixed} & \vline height 9pt depth 5pt \enspace Solution & 45 & 46 & 39 & 15 & 12 & 4 & 39 & 42 & 57 \\
+     & \vline \enspace Droplet & 40 & 39 & 41 & 12 & 11 & 8 & 47 & 50 & 51 \\
+     & \vline depth 3pt \enspace Amyloid & 39 & 39 & 38 & 14 & 8 & 9 & 47 & 54 & 53 \\
+     \multirow{3}{*}{All closed} & \vline height 9pt depth 5pt \enspace Solution & 99 & 99 & 100 & 1 & 1 & 0 & 0 & 0 & 0 \\
+     & \vline \enspace Droplet & 99 & 99 & 100 & 1 & 1 & 0 & 0 & 0 & 0 \\
+     & \vline depth 3pt \enspace Amyloid & 98 & 100 & 100 & 2 & 0 & 0 & 0 & 0 & 0 \\
+     \multirow{3}{*}{All open} & \vline height 9pt depth 5pt \enspace Solution & 2 & 8 & 1 & 14 & 16 & 14 & 85 & 76 & 86 \\
+     & \vline \enspace Droplet & 2 & 0 & 2 & 22 & 14 & 19 & 77 & 86 & 79 \\
+     & \vline depth 3pt \enspace Amyloid & 1 & 0 & 2 & 23 & 15 & 30 & 77 & 84 & 68 \\
+     \multirow{3}{*}{All extended} & \vline height 9pt depth 5pt \enspace Solution & 3 & 3 & 1 & 12 & 14 & 19 & 85 & 82 & 81 \\
+     & \vline \enspace Droplet & 0 & 1 & 0 & 14 & 24 & 10 & 86 & 75 & 90 \\
+     & \vline depth 3pt \enspace Amyloid & 0 & 2 & 0 & 23 & 18 & 6 & 77 & 80 & 93 \\
+     \hline
+     \hline
+    \end{tabular}
+    \begin{tablenotes}
+    \item [$\dagger$] Initial configuration of the molecules.
+    \end{tablenotes}
+    \end{threeparttable}
+  \end{sidewaystable}
+
+  \newpage
+  \clearpage
+  \subsection{Hydrophobicities of amino acids}
+  \begin{table}[h!]
+    \renewcommand*{\arraystretch}{1.3}
+    \centering
+    \caption{\textbf{Hydrophobicities of amino acids. }Three-letter codes, one-letter codes and hydrophobicities $\varepsilon_i$ of the 20 common amino acid types taken from the 1BPA v1.1 coarse-grained model \supercite{Dekker2023}.}
+    \label{tab:R2}
+    \begin{tabular}{l c c c c}
+    \hline\hline
+      Amino acid type \;\;\;& Three-letter code & One-letter code & $\varepsilon_i$ & $q_i$ $[e]$ \\
+     \hline
+        Alanine & ALA & A & 0.7 & 0 \\
+        Arginine & ARG & R & 0.005 & +1\;\;\; \\
+        Asparagine & ASN & N & 0.41 & 0 \\
+        Aspartatic acid & ASP & D & 0.005 & $-$1\;\;\;\\
+        Cysteine & CYS & C & 0.68 & 0 \\
+        Glutamine & GLN & Q & 0.33 & 0\\
+        Glutamatic acid & GLU & E & 0.005 & $-$1\;\;\;\\
+        Glycine & GLY & G & 0.48 & 0\\
+        Histidine & HIS & H & 0.53 & 0 \\
+        Isoleucine & ILE & I & 0.98 & 0 \\
+        Leucine & LEU & L & 1 & 0 \\
+        Lysine & LYS & K & 0.005 & +1\;\;\; \\
+        Methionine & MET & M & 0.78 & 0 \\
+        Phenylalanine & PHE & F & 1 & 0 \\
+        Proline & PRO & P & 0.65 & 0 \\
+        Serine & SER & S & 0.45 & 0 \\
+        Threonine & THR & T & 0.51 & 0 \\
+        Tryptophan & TRP & W & 0.96 & 0 \\
+        Tyrosine & TYR & Y & 0.82 & 0 \\
+        Valine & VAL & V & 0.94 & 0\\
+     \hline
+     \hline
+    \end{tabular}
+  \end{table}

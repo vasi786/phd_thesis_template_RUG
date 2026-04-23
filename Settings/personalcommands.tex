@@ -1,0 +1,114 @@
+%To make simple comments in the text
+\newcommand{\com}[1]{\textcolor{red}{#1}}
+%To define the vector command (which will just make math FAT)
+\renewcommand{\vec}[1]{\mathbf{#1}}
+%To make any chemical formulas look like chemical formulas
+\newcommand*\chem[1]{\ensuremath{\mathrm{#1}}}
+\DeclareSIUnit\Molar{\textsc{M}}
+\DeclareSIUnit\molar{\textsc{M}}
+% To make some chemicals properly hyphenated
+% \hyphenation{
+%     er-go-no-mic,% example
+%     tri-me-thoxy-silyl,
+%     me-tha-cry-late,
+%     lu-ti-dine,
+% }
+
+% I really don't care about hyphenation in the bibliography, and some names are just not hyphenated, super annoying. So force the matter here.
+\hyphenation{S-c-i-o-r-t-i-n-o}
+\hyphenation{S-c-h-w-a-r-t-z}
+
+% command for etal and roman numerals
+\newcommand{\etal}{\textit{et al.~}} % usage \etal{}
+
+\newcommand{\croman}[1]
+{\MakeUppercase{\romannumeral #1}}
+
+\newenvironment{captioncont}[1]{
+  \begin{tcolorbox}[colback=gray!5, colframe=gray!30, boxrule=0.2pt, sharp corners, left=6pt, right=6pt, top=4pt, bottom=4pt]
+  \small
+  Figure~\ref{#1} \textit{caption (continued).}
+}{\end{tcolorbox}}
+\newcommand{\tred}[1]{\textcolor{red}{(#1)}}
+\newcommand{\suppfig}[0]{Supplementary Fig.~}
+\newcommand{\supptable}[0]{Supplementary Tab.~}
+
+
+
+\newcommand{\chapterbar}{
+  \pgfmathparse{\thechapter}
+  \let\chapnum\pgfmathresult
+  \ifnum\chapnum>0
+    \ifnum\chapnum<7
+      \checkoddpage
+      \ifoddpage
+        \pgfmathparse{\colourarray[\chapnum]}
+        \edef\chapclr{\pgfmathresult}
+        \begin{tikzpicture}[remember picture,overlay]
+          \pgfmathsetmacro{\yoffset}{6 - ((\chapnum - 1) * (2.5))}
+          \node[
+            anchor=center,
+            inner sep=2pt,
+            font=\sffamily\bfseries\color{white},
+            text width=1.5cm,
+            align=center,
+            fill=\chapclr,
+            rounded corners=3pt,
+            drop shadow,
+            minimum height=1cm
+          ] at ([xshift=-0.4cm, yshift=\yoffset cm]current page.east)
+          {\chapnum};
+        \end{tikzpicture}
+      \fi
+    \fi
+  \fi
+}
+
+
+
+% for chapter bar to be a circle
+
+
+% \newcommand{\chapterbar}{
+%   \ifnum\value{chapter}>0
+%     \checkoddpage
+%     \ifoddpage
+%       \pgfmathparse{\colourarray[\thechapter]}
+%       \edef\chapclr{\pgfmathresult}
+%       \begin{tikzpicture}[remember picture,overlay]
+%         \pgfmathsetmacro{\yoffset}{6 - ((\thechapter - 1) * (14 / 7))}
+%         \node[
+%           circle,
+%           anchor=center,
+%           inner sep=2pt,
+%           minimum size=1.4cm,
+%           font=\sffamily\bfseries\color{white},
+%           fill=\chapclr,
+%           drop shadow,
+%           align=center
+%         ] at ([xshift=0.2cm, yshift=\yoffset cm]current page.east)
+%         {\thechapter};
+%       \end{tikzpicture}
+%     \fi
+%   \fi
+% }
+
+
+
+\AddEverypageHook{\chapterbar}
+
+%chapter text color for figures alphabets. figure 2c-d, c-d will have the same color as the chapter
+\newcommand{\chaptc}[1]{%
+  \textcolor{\chapclr}{#1}%
+}
+% remove the header only on the first page of the chapter
+\DeclareNewPageStyleByLayers{noheadrule}{
+  scrheadings.foot.scrlayer % keep footer
+}
+%\deffootnote{1.5em}{1em}{\makebox[1.5em][l]{\thefootnotemark}}
+\deffootnote{0em}{0em}{\thefootnotemark\ }
+\setkomafont{footnote}{\footnotesize}
+%\renewcommand{\footnoterule}{\kern-3pt\hrule width 0.4\columnwidth\kern 2.6pt}
+\renewcommand{\footnoterule}{\vspace{2cm}\kern-3pt\hrule width 0.4\columnwidth\kern 2.6pt}
+\setcapindent{2pt}  % remove the indent in the caption coming from the hanging indent in koma script
+\DeclareSIUnit{\angstrom}{\textup{\AA}}

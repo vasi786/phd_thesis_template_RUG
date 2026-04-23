@@ -1,0 +1,99 @@
+%! TeX program = lualatex
+\documentclass{article}
+
+\usepackage[paperwidth=170mm,paperheight=240mm,margin=0mm]{geometry}
+\usepackage{graphicx}
+\usepackage{fontspec}
+
+\setmainfont{Minion Pro}
+\fontsize{12pt}{14pt}\selectfont
+\newlength{\whitespace}
+\setlength{\whitespace}{\baselineskip}
+
+\begin{document}
+\thispagestyle{empty}
+
+\begin{center}
+\begin{minipage}[c][220mm][c]{124mm}
+
+  \makeatletter
+  \begin{center}
+
+      % 1 whitespace before logo
+      \vspace{1\whitespace}
+
+      % Logo (left aligned), size ≈ 2.03 x 7.38 cm
+      \begin{flushleft}
+        \includegraphics[width=7.38cm]{./rugr_logoen_zwart_cmyk-eps-converted-to.pdf}
+      \end{flushleft}
+
+      % 5 whitespaces between logo and title
+      \vspace{5\whitespace}
+
+      % Title: 24 pt, bold, max two lines
+      {\fontsize{24pt}{28pt}\selectfont\textbf{
+          TITLE OF YOUR THESIS
+      }}
+
+      % No subtitle: 7 whitespaces after title
+      \vspace{7\whitespace}
+
+      % "PhD thesis" heading: 14 pt
+      {\fontsize{14pt}{16pt}\selectfont\textbf{PhD thesis}}
+
+      % 4 whitespaces before main text block
+      \vspace{4\whitespace}
+
+      % Main text, 12 pt
+      {\fontsize{12pt}{14pt}\selectfont
+        to obtain the degree of PhD at the \\
+        University of Groningen \\
+        on the authority of the \\
+        Rector Magnificus Prof. J.M.A. Scherpen \\
+        and in accordance with \\
+        the decision by the College of Deans.
+      }
+
+      % 1 whitespace
+      \vspace{\whitespace}
+
+      {\fontsize{12pt}{14pt}\selectfont
+        This thesis will be defended in public on
+      }
+
+      % 1 whitespace
+      \vspace{\whitespace}
+
+      {\fontsize{12pt}{14pt}\selectfont
+        Tuesday 17 February 2026 at 14:30 hours
+      }
+
+      % 4 whitespaces
+      \vspace{4\whitespace}
+
+      % "by" line: 14 pt
+      {\fontsize{14pt}{16pt}\selectfont by}
+
+      % 4 whitespaces
+      \vspace{4\whitespace}
+
+      % Name: 14 pt, bold
+      {\fontsize{14pt}{16pt}\selectfont\textbf{YOUR NAME}}
+
+      % 1 whitespace
+      \vspace{\whitespace}
+
+      % Birth information: 12 pt
+      {\fontsize{12pt}{14pt}\selectfont
+        born on 1 January 1001 in \\
+        Somewhere in Tatooine
+      }
+
+  \end{center}
+  \makeatother
+
+\end{minipage}
+\end{center}
+
+\clearpage
+\end{document}
